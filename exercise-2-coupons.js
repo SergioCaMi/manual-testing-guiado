@@ -133,7 +133,17 @@ const coupons = [
  * @returns {bool} true | false 
  */
 const isValidCoupon = (code) => {
-    // TODO
+    const coupon = coupons.find(c => c.code === code);
+    if (!coupon) return false;
+    const today = new Date();
+    const expirationDate = new Date(coupon.expirationDate);
+    return !coupon.redeemed && expirationDate >= today;
 }
 
-console.log("Cupón que existe, no está caducado y es válido. Debería devolver true", isValidCoupon('HOTEL2024'));
+console.log("Cupón que existe, no está caducado y es válido. Debería devolver true", isValidCoupon('HOTEL2024'));//true
+
+console.log("Cupón que NO existe. Debería devolver false", isValidCoupon('RUSIC2024'));//false, no existe el cupón
+
+console.log("Cupón que existe, no está caducado pero está canjeado, no es válido. Debería devolver false", isValidCoupon('MUSIC2024'));//false, está canjeado
+
+console.log("Cupón que existe, pero está caducado no es válido. Debería devolver false", isValidCoupon('DIVING2024'));//false, ha expirado

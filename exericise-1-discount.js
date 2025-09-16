@@ -7,7 +7,7 @@ function calculateDiscount(price) {
   let discount = 0;
 
   // Implementar Iteración 1A
-  if (price >= 500 && price < 1000) {
+  if (price > 500 && price < 1000) {
     discount = price * 0.05;
   } else if (price >= 1000) {
      discount = price * 0.1;
@@ -31,7 +31,6 @@ function calculateTotal(basePrice, voucher) {
     let shippingCosts = 5;
     let discount = calculateDiscount(basePrice);
     let total = basePrice - discount - voucher + shippingCosts;
-    console.log("Gastos:", shippingCosts, " precio total: ", basePrice, " con descuento: ", basePrice - discount, " Total: ", total)
     return total;
 }
 
