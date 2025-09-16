@@ -17,7 +17,7 @@ Cuando te funcione respondete a las siguientes preguntas:
 
 Amancio Ortega va que la cosa funciona: un descuento hace a la gente gastar mucho más de lo que se pensaba. Quieren **añadir** una nueva funcionalidad. Si el valor de compra es mayor de **500 euros**, entonces le aplicaremos un **5%** de descuento. **Importante:** ¡los descuentos no deben acumularse!. Es decir, solo debemos aplicar uno a la vez.
 
-Para probarlo _substituye_ los _console.log_ por:
+Para probarlo añade otra prueba usando _console.log_ :
 
 ```
 console.log(calculateDiscount(750)); // 37.95
